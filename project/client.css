@@ -117,3 +117,34 @@ body{
     height: 20px;
     float: right;
 }
+
+#profile {
+  position: relative;
+  background-color: lightblue;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  height: 100%;
+}
+
+.tabs {
+  background-color: lightgray;
+  overflow: hidden;
+  width: 10%;
+}
+
+.taboptions {
+  background-color: inherit;
+  outline: 0;
+  border: 0;
+  padding: 10px 10px;
+  display: block;
+}
+
+.tabs button.active {
+  background-color: darkgray;
+}
+
+.tab_content {
+  display: none;
+}

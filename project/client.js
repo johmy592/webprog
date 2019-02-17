@@ -15,11 +15,34 @@ displayView = function(){
                   checkSignup();
               });
   } else{
+
     var profile_content = document.getElementById("profileview").innerHTML;
     document.getElementById('view').innerHTML = profile_content;
 
+    document.getElementById('home_btn').addEventListener('click', function(e){change_tab(e,'home_tab')});
+    document.getElementById('browse_btn').addEventListener('click', function(e){change_tab(e,'browse_tab')});
+    document.getElementById('acc_btn').addEventListener('click', function(e){change_tab(e,'acc_tab')});
+
     document.getElementById('signoutform').addEventListener('submit', logOut);
+
+    document.getElementById('home_btn').click();
   }
+};
+
+
+/* Switch between tabs */
+change_tab = function(e, tab){
+  var i, tab_options, tab_content;
+  tab_content = document.getElementsByClassName('tab_content');
+  for(i=0; i < tab_content.length; i++){
+    tab_content[i].style.display = "none";
+  }
+
+  tab_options = document.getElementsByClassName('taboptions');
+  var current = document.getElementsByClassName(' active');
+  current[0].className = current[0].className.replace(' active','');
+  document.getElementById(tab).style.display = "block";
+  e.currentTarget.className +=" active";
 };
 
 checkSignup = function(){
